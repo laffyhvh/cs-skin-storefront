@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sell CS2 Skins</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-background text-white">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">CS2 Skins</a>
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/buy.html" class="nav-link">Buy</a>
+          <a href="/sell.html" class="nav-link">Sell</a>
+          <a href="/history.html" class="nav-link">History</a>
+        </div>
+        <button id="loginBtn" class="login-btn">Steam Login</button>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1 class="page-title">Sell Your Skins</h1>
+      
+      <div class="sell-container">
+        <p class="sell-message">To sell your skins, please login with Steam first. Once logged in, you'll be able to select items from your inventory to list on the marketplace.</p>
+        <button id="sellLoginBtn" class="login-btn">Login with Steam to Start Selling</button>
+      </div>
+    </main>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <h2>Steam Login</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Steam username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Steam password" required>
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/main.js"></script>
+  </body>
+</html>

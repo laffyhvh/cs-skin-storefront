@@ -26,13 +26,39 @@ const SKINS = [
   }
 ];
 
+// Sample transaction history
+const TRANSACTIONS = [
+  {
+    date: "2024-02-20",
+    item: "AK-47 | Asiimov",
+    type: "Purchase",
+    price: 45.50
+  },
+  {
+    date: "2024-02-19",
+    item: "M4A4 | Neo-Noir",
+    type: "Sale",
+    price: 32.75
+  }
+];
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
-  // Render skins
-  renderSkins();
-  
   // Setup modal functionality
   setupModal();
+  
+  // Initialize page-specific content
+  const currentPage = window.location.pathname;
+  
+  if (currentPage === '/' || currentPage === '/index.html') {
+    renderSkins();
+  } else if (currentPage === '/buy.html') {
+    renderMarketplaceSkins();
+  } else if (currentPage === '/history.html') {
+    renderTransactionHistory();
+  } else if (currentPage === '/sell.html') {
+    setupSellPage();
+  }
 });
 
 // Render skins in the grid
@@ -43,6 +69,17 @@ function renderSkins() {
   SKINS.forEach(skin => {
     const skinCard = createSkinCard(skin);
     skinsGrid.appendChild(skinCard);
+  });
+}
+
+// Render marketplace skins
+function renderMarketplaceSkins() {
+  const marketplaceSkins = document.getElementById('marketplaceSkins');
+  if (!marketplaceSkins) return;
+
+  SKINS.forEach(skin => {
+    const skinCard = createSkinCard(skin);
+    marketplaceSkins.appendChild(skinCard);
   });
 }
 
@@ -63,6 +100,40 @@ function createSkinCard(skin) {
   `;
   
   return card;
+}
+
+// Render transaction history
+function renderTransactionHistory() {
+  const historyTableBody = document.getElementById('historyTableBody');
+  if (!historyTableBody) return;
+
+  TRANSACTIONS.forEach(transaction => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${transaction.date}</td>
+      <td>${transaction.item}</td>
+      <td>
+        <span class="transaction-type ${transaction.type.toLowerCase()}">
+          ${transaction.type}
+        </span>
+      </td>
+      <td>$${transaction.price.toFixed(2)}</td>
+    `;
+    historyTableBody.appendChild(row);
+  });
+}
+
+// Setup sell page functionality
+function setupSellPage() {
+  const sellLoginBtn = document.getElementById('sellLoginBtn');
+  if (!sellLoginBtn) return;
+
+  sellLoginBtn.addEventListener('click', () => {
+    const modal = document.getElementById('loginModal');
+    if (modal) {
+      modal.style.display = 'block';
+    }
+  });
 }
 
 // Setup modal functionality

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS2 Skins History</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-background text-white">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">CS2 Skins</a>
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/buy.html" class="nav-link">Buy</a>
+          <a href="/sell.html" class="nav-link">Sell</a>
+          <a href="/history.html" class="nav-link">History</a>
+        </div>
+        <button id="loginBtn" class="login-btn">Steam Login</button>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1 class="page-title">Transaction History</h1>
+      
+      <div class="history-table-container">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Item</th>
+              <th>Type</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody">
+            <!-- Transaction history will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <h2>Steam Login</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Steam username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Steam password" required>
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
