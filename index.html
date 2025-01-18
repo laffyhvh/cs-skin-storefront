@@ -3,15 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cs-skin-storefront</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
+    <title>CS2 Skins Marketplace</title>
+    <link rel="stylesheet" href="/styles.css">
   </head>
+  <body class="bg-background text-white">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">CS2 Skins</a>
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/buy.html" class="nav-link">Buy</a>
+          <a href="/sell.html" class="nav-link">Sell</a>
+          <a href="/history.html" class="nav-link">History</a>
+        </div>
+        <button id="loginBtn" class="login-btn">Steam Login</button>
+      </div>
+    </nav>
 
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <main class="container">
+      <section class="hero">
+        <h1>CS2 Skin Marketplace</h1>
+        <p>Buy, sell, and trade CS2 skins with confidence. Join thousands of players in the most trusted skin marketplace.</p>
+      </section>
+
+      <section class="featured-skins">
+        <h2>Featured Skins</h2>
+        <div class="skins-grid" id="skinsGrid">
+          <!-- Skins will be dynamically inserted here -->
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="feature-card">
+          <h3>24/7 Support</h3>
+          <p>Our team is always here to help with any questions or issues.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Secure Trading</h3>
+          <p>Every transaction is protected and monitored for your safety.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Best Prices</h3>
+          <p>Competitive prices and regular market updates.</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <h2>Steam Login</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Steam username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Steam password" required>
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/main.js"></script>
   </body>
 </html>
